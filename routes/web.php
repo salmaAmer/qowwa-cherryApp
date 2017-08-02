@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/view','PatientsController@show');
+Route::get('/byid/{id}', 'PatientsController@preview');
+Route::post('/patients','PatientsController@insert');
