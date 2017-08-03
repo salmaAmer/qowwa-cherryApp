@@ -18,6 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/view','PatientsController@show');
-Route::get('/byid/{id}', 'PatientsController@preview');
-Route::post('/patients','PatientsController@insert');
+Route::get('/patients','PatientsController@index');
+Route::get('/patients/{id}', 'PatientsController@show');
+Route::post('/patients','PatientsController@store');
+Route::get('/patientsD/{id}','PatientsController@delete');
+Route::post('/patients/{id}/edit','PatientsController@update');
+Route::post('/visits','VisitsController@store');
+Route::get('/visits/{id}','VisitsController@delete');
+Route::post('/visits/{id}/edit','VisitsController@update');
